@@ -29,7 +29,7 @@ def aggregate(documents, team, batch_id, dataset_ids):
         for key in sorted(set().union(*(row.keys() for row in rows))):
             values = [row[key] for row in rows if row.get(key) is not None]
             result[group][key] = {
-                'mean': statistics.fmean(values) if values else None,
+                'mean': math.fsum(values) / len(values) if values else None,
                 'std': statistics.pstdev(values) if values else None,
                 'n': len(values),
             }
