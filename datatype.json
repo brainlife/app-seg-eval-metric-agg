@@ -1,0 +1,5 @@
+{
+  "name": "neuro/seg-eval-metric-agg",
+  "desc": "Equal-weight per-image segmentation metrics: mean, population standard deviation, and valid-value count for raw and target-informed neighbor-corrected results.",
+  "files": [{ "id": "aggregate", "filename": "aggregate.json", "required": true }]
+}

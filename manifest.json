@@ -1,0 +1,38 @@
+{
+  "name": "Segmentation evaluation metric aggregation",
+  "desc": "Aggregate every numeric field in raw and target_informed_neighbor_corrected for one complete submission batch. Each image has equal weight; standard deviation is population SD (ddof=0), including zero for a single image. Missing values are excluded per metric and n is reported.",
+  "inputs": [
+    {
+      "id": "metrics",
+      "datatype": "6aa992dfdeee1367b435f3b8",
+      "multi": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "aggregate",
+      "datatype": "6ada73fa1e6d29036a18edcc"
+    }
+  ],
+  "config": {
+    "metrics": {
+      "type": "input",
+      "input_id": "metrics",
+      "file_id": "metrics"
+    },
+    "team": {
+      "type": "string",
+      "default": ""
+    },
+    "batch_id": {
+      "type": "string",
+      "default": ""
+    },
+    "input_dataset_ids": {
+      "type": "string",
+      "default": "[]"
+    }
+  },
+  "github": "brainlife/app-seg-eval-metric-agg",
+  "github_branch": "main"
+}
