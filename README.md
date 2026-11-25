@@ -14,25 +14,38 @@
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
-**Aggregates a batch of CONNECTS segmentation evaluation metrics into per-metric means and population standard deviations, written as aggregate.json.**
+> **Aggregates a batch of CONNECTS segmentation evaluation metrics into per-metric means and population standard deviations, written as aggregate.json.**
 
 Averages every numeric metric in the raw and target_informed_neighbor_corrected groups across all input metrics files with equal weight per image, reports population standard deviation (ddof=0) and the count n per metric, and excludes missing values. Use it on one complete batch of seg-eval-metrics datasets; other metric groups are not pooled.
 
-Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.990](https://doi.org/10.25663/brainlife.app.990)
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/seg-eval-metrics` |
+| 📤 **Outputs** | `neuro/seg-eval-metric-agg` |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.990](https://doi.org/10.25663/brainlife.app.990) |
+
+#### 📥 Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `metrics` | `neuro/seg-eval-metrics` | yes | Segmentation evaluation metrics (metrics.json) for each image in the batch. |
 
+#### 📤 Outputs
+
 | Output | Datatype | Description |
 |---|---|---|
 | `aggregate` | `neuro/seg-eval-metric-agg` | aggregate.json with per-metric mean, population standard deviation and n, plus team, batch and input dataset IDs. |
+
+<details>
+<summary><b>⚙️ Parameters</b> (3)</summary>
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
 | `team` | string |  | Team name recorded in the aggregate output. |
 | `batch_id` | string |  | Batch identifier recorded in the aggregate output. |
 | `input_dataset_ids` | string | `[]` | JSON array of dataset IDs, one unique ID per metrics file, in the same order. |
+
+</details>
 
 <!-- brainlife-app:end -->
 
